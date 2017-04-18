@@ -1,6 +1,9 @@
 defmodule MaruCooking.Router.Homepage do
   use Maru.Router
 
+  @moduledoc """
+  This is a simple router created with Maru
+  """
   get do
     json(conn, %{ hello: :world })
   end
