@@ -1,6 +1,6 @@
-# MaruCooking
+# Maru Starter
 
-Simple cooking API to highlight some of the features of Maru
+Simple Maru Starter
 
 ## Installation
 
