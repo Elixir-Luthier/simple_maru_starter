@@ -1,5 +1,6 @@
 defmodule MaruCooking.Router.Homepage do
   use Maru.Router
+
   require MaruCooking.FoodData
   @moduledoc """
     This is a simple router created with Maru
@@ -9,10 +10,17 @@ defmodule MaruCooking.Router.Homepage do
   end
 
   params do
-    requires :item, type: String
+    requires :item, type: Atom
   end
-  get :get_recipe do
-    json(conn, %{ item: params[:item]})
+  get :ingredients do
+    json(conn, MaruCooking.FoodData.ingredients(params[:item]))
+  end
+
+  params do
+    requires :item, type: Atom
+  end
+  post :eat do
+    json(conn, MaruCooking.FoodData.eat(params[:item]))
   end
 end
 
